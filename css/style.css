@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap');
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: 'Sen', sans-serif;
+  position: relative;
+  background-image: url("../img/back.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 200px 50%;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+ul{
+  list-style: none;
+}
+.container{
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* media Query */
+/* small */
+@media (min-width:767px){
+  .container{
+    width: 750px;
+  }
+}
+  /* media */
+@media (min-width:992px){
+  .container{
+    width: 978px;
+  }
+}
+  /* large */
+@media (min-width:1200px){
+  .container{
+    width: 1170px;
+  }
+}
+/* ******* header ******* */
+header{
+  position: relative;
+}
+header .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo{
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header nav{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  height: 70px;
+}
+header nav ul{
+  display: flex;
+}
+header nav ul li a{
+  position: relative;
+  padding: 0 15px;
+  font-size: 24px;
+  font-weight: 400;
+  color: black;
+  opacity: 50%;
+  transition: 0.3s;
+}
+header nav ul li a::before{
+  content: "";
+  position: absolute;
+  height: 3px;
+  background-color: white;
+  bottom: -8px;
+  left: 50%;
+  width: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  transition: 0.3s;
+}
+header nav ul li a:hover{
+  opacity: 1;
+}
+header nav ul li a:hover::before{
+  width: calc(100% - 43px);
+}
+header nav ul li a.active{
+  opacity: 1;
+}
+header nav ul li a.active::before{
+  width: calc(100% - 43px);
+}
+.btn{
+  font-size: 18px;
+  background: white;
+  border: 2px solid white;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover{
+  background-color: #0E477A;
+  color: white;
+}
+/* media heeader */
+.nav-btn{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: none;
+}
+.nav-btn .line{
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: #ecf0f1;
+  margin-block: 10px;
+  border-radius: 4px;
+  transition: transform .5s,
+  opacity .25s;
+}
+.nav-btn.active .line:nth-child(1){
+  transform: translateY(13px)
+  rotate(45deg);
+}
+.nav-btn.active .line:nth-child(2){
+  opacity: 0;
+}
+.nav-btn.active .line:nth-child(3){
+  transform: translateY(-13px)
+  rotate(-45deg);
+}
+nav.active{
+  display: flex;
+}
+@media (max-width: 1200px) {
+  .nav-btn{
+    display: block;
+  }
+  header nav{
+    display: none;
+    position: absolute;
+    right: 15px;
+    top: 70px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px
+  }
+  header nav ul{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px 0;
+  }
+}
+/* ********** landing ************ */
+
+.landing .container{
+  height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+}
+.landing .content{
+  display: flex;
+  flex-direction: column;
+}
+.landing .content img{
+  width: 75%;
+}
+.landing .content .text{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.landing .content .text h1{
+  font-size: 50px;
+  font-weight: bold;
+  color: #0E477A;
+}
+.landing .content .text p{
+  font-size: 18px;
+  line-height: 1.5;
+  color: #777;
+  margin: 15px 0;
+}
+.landing .content .text a{
+  color: black;
+  border-color: black;
+  transition: 0.3s;
+}
+.landing .content .text a:hover{
+  color: white;
+  background-color: #0E477A;
+  border-color: white;
+}
+.landing .image{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.landing .image img{
+  width: 75%;
+}
+@media (max-width: 1200px) {
+  .landing .content{
+    align-items: center;
+  }
+  .landing .content .text{
+    align-items: center;
+  }
+  .landing .image{
+    display: none;
+  }
+  body{
+    background-position-y: -80px;
+    background-position-x: left;
+  }
+}

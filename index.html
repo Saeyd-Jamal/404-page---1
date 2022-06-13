@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>page 404</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="#" class="logo"><img src="img/logo.png" alt="..."></a>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#princing" class="active">Princing</a></li>
+          <li><a href="#faqs">FAQ’s</a></li>
+        </ul>
+        <button class="btn">Contact us</button>
+      </nav>
+      <button type="button" class="nav-btn">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+    </div>
+  </header>
+  <div class="landing">
+    <div class="container">
+      <div class="content">
+        <img src="img/404.png" alt=".">
+        <div class="text">
+          <h1>Page Not Found</h1>
+          <p>We can’t seem to find a page you are looking for </p>
+          <a href="#home" class="btn">Go Back</a>
+        </div>
+      </div>
+      <div class="image">
+        <img src="img/robot.png" alt="...">
+      </div>
+    </div>
+  </div>
+  <script>
+    const nav_btn_Menu = document.querySelector('.nav-btn'),
+          navbar = document.querySelector('nav');
+    const menuIsActive = () => {
+      nav_btn_Menu.classList.toggle('active');
+      navbar.classList.toggle('active');
+    }
+    nav_btn_Menu.addEventListener('click', menuIsActive);
+  </script>
+</body>
+</html>
